@@ -369,13 +369,35 @@ export default class VehicleFuncs {
         rot: alt.IVector3,
         doNotDelete: boolean = false,
     ): alt.Vehicle {
+
+        const makeId = function makeid(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() *
+                    charactersLength));
+            }
+            return result;
+        }
+
         const vehicle = new alt.Vehicle(model, pos.x, pos.y, pos.z, rot.x, rot.y, rot.z);
         vehicle.player_id = player.id;
         vehicle.behavior = TEMPORARY_VEHICLE;
-        vehicle.numberPlateText = 'TEMP';
+        vehicle.numberPlateText = 'ZLOIDEMON';
         vehicle.lockState = VEHICLE_LOCK_STATE.LOCKED;
         vehicle.isTemporary = true;
         vehicle.modelName = model;
+        vehicle.primaryColor = Math.floor(Math.random() * 160);
+        vehicle.secondaryColor = Math.floor(Math.random() * 160);
+        vehicle.neon = {
+            front: true,
+            back: true,
+            left: true,
+            right: true
+        };
+
+        vehicle.neonColor = new alt.RGBA(255, 0, 0, 255);
 
         if (doNotDelete) {
             vehicle.overrideTemporaryDeletion = true;
@@ -388,6 +410,8 @@ export default class VehicleFuncs {
             DEFAULT_CONFIG.VEHICLE_DISPLAY_LOCK_INTERACTION_INFO,
         );
         return vehicle;
+
+
     }
 
     /**
@@ -558,7 +582,7 @@ export default class VehicleFuncs {
         for (const vehicle of vehicles) {
             try {
                 await VehicleFuncs.despawn(vehicle.data.id);
-            } catch {}
+            } catch { }
         }
     }
 

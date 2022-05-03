@@ -23,14 +23,18 @@
     "resources": [
         "webviews",
         "core",
-        "car_ bmwg07",
+        "car_bmwg07",
         "car_q8prior",
         "car_22m5",
         "car_ben17",
         "car_rs7c8",
-        "car_ amggtrr20",
-        "car_ bmwg07",
-        "car_ gladiator"
+        "car_amggtrr20",
+        "car_bmwg07",
+        "car_gladiator",
+        "car_18Velar",
+        "car_22g63",
+        "car_lc300gr",
+        "car_police2"
     ],
     "tags": [
         "athena",
