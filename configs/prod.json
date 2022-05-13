@@ -31,7 +31,6 @@
         "car_amggtrr20",
         "car_bmwg07",
         "car_gladiator",
-        "car_18Velar",
         "car_22g63",
         "car_lc300gr",
         "car_s63amg18",
@@ -40,7 +39,12 @@
         "car_mansrr",
         "car_m5e34",
         "car_b12l",
-        "car_e53"
+        "car_e53",
+        "car_cayenne",
+        "car_q820",
+        "car_master2019",
+        "car_pgt322",
+        "car_f450plat"
     ],
     "tags": [
         "athena",
